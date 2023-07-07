@@ -108,7 +108,7 @@ ul {
 
 @media (min-width:1441px) {
     .header .logo {
-        font-size: 5rem;        
+        font-size: 5rem;
     }
 }
 
@@ -126,10 +126,18 @@ ul {
 }
 
 @media (max-width: 426px) {
-    .header .main-nav {}
+    .header .main-nav {
+        margin: auto;
+    }
 }
 
-.header .main-nav>li {
+.header .main-nav > li:hover .mega-menu {
+    z-index: 100;
+    opacity: 1;
+    top: calc(100% + 1px);
+}
+
+.header .main-nav>li>a {
     position: relative;
     display: flex;
     align-items: center;
@@ -144,16 +152,12 @@ ul {
 
 
 @media (max-width: 426px) {
-    .header .main-nav>li {
+    .header .main-nav>li>a {
         padding: 0 5px;
         height: 40px;
+        font-size: 0.9rem;
     }
 }
-
-.header .main-nav>li>a {
-    color: black;
-}
-
 
 @media (min-width:1441px) {
     .header .main-nav>li>a {
@@ -161,13 +165,96 @@ ul {
     }
 }
 
+.header .mega-menu {
+    position: absolute;
+    width: 100%;
+    left: 0;
+    padding: 30px;
+    border-bottom: 3px solid var(--main-color);
+    background-color: white;
+    z-index: -1;
+    display: flex;
+    gap: 40px;
+    opacity: 0;
+    top: calc(100% + 50px);
+    transition: top var(--main-trasition), opacity var(--main-trasition);
 
-@media (max-width: 426px) {
-    .header .main-nav>li>a {
-        font-size: 14px;
+}
+
+@media (max-width:767px) {
+    .header .mega-menu {
+        flex-direction: column;
+        gap: 0;
     }
 }
 
+.header .mega-menu .image {
+    display: none;
+}
+
+@media (min-width: 1024px) {
+    .header .mega-menu .image {
+        display: block;
+    }
+}
+
+.header .mega-menu .image img {
+    max-width: 100%;
+}
+
+.header .mega-menu .links {
+    min-width: 250px;
+    flex-grow: 1;
+}
+
+.header .mega-menu .links li {
+    position: relative;
+}
+
+.header .mega-menu .links li:not(:last-child) {
+    border-bottom: 1px solid #e9e6e6;
+}
+
+@media (max-width:767px) {
+    .header .mega-menu .links:first-of-type {
+        border-bottom: 1px solid #e9e6e6;
+    }
+}
+
+.header .mega-menu .links li::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 0;
+    top: 0;
+    left: 0;
+    background-color: #fafafa;
+    z-index: -1;
+    transition: var(--main-trasition)
+
+}
+
+.header .mega-menu .links li:hover:before {
+    width: 100%;
+}
+
+.header .mega-menu .links li a {
+    display: block;
+    padding: 15px;
+    color: var(--main-color);
+    font-size: 18px;
+    font-weight: bold;
+}
+
+@media (max-width:767px) {
+    .header .mega-menu .links li a {
+        padding: 5px;
+    }
+}
+
+.header .mega-menu .links li a i {
+    margin-right: 10px;
+}
 
 /* end header */
 
