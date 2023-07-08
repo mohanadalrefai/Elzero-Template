@@ -337,7 +337,7 @@ ul {
 
 @media (max-width:767px) {
     .landing .container {
-        min-height: calc(100vh - 100px);
+        min-height: calc(100vh - 150px);
         flex-direction: column;
         justify-content: space-around;
     }
