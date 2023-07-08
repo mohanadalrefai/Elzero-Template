@@ -468,6 +468,12 @@ ul {
     background-color: white;
     border-radius: 6px;
     overflow: hidden;
+    transition: transform var(--main-trasition), box-shadow var(--main-trasition);
+}
+
+.articles .box:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 2px 10px rgb(0 0 0 / 20%);
 }
 
 .articles .box img {
@@ -483,11 +489,79 @@ ul {
     margin: 0;
 }
 
-.articles .box .info {
-    padding: 20px;
+.articles .box .content p {
+    line-height: 1.5;
+    color: #777;
 }
 
+.articles .box .info {
+    padding: 20px;
+    border-top: 1px solid #e6e6e7;
+    display: flex;
+    justify-content: space-between;
+    color: var(--main-color);
+    align-items: center;
+}
+
+.articles .box .info a {
+    color: var(--main-color);
+    font-weight: bold;
+}
+
+.articles .box:hover .info i {
+    animation: arrow-move 1s cubic-bezier(0, 0.28, 0.36, 1.02)  infinite forwards;
+}
 /* end articles */
+
+/* start gallery */
+.gallery {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+}
+
+.gallery .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.gallery .box {
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+}
+
+.gallery .box .image {
+    position: relative;
+    overflow: hidden;
+}
+
+.gallery .box .image::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 0;
+    height: 0;
+    background-color: rgb(255 255 255 / 30%);
+    opacity: 0;
+}
+
+.gallery .box:hover .image::after {
+    animation: flashing 0.6s;
+}
+
+.gallery .box .image img {
+    max-width: 100%;
+    transition: var(--main-trasition);
+}
+
+.gallery .box:hover img {
+    transform: rotate(5deg) scale(1.1);
+}
+/* end gallery */
 
 /* start animation */
 @keyframes up-and-down {
@@ -552,4 +626,26 @@ ul {
     }
 }
 
+@keyframes arrow-move {
+    50% {
+        transform: translateX(10px);
+    }
+
+    100%{
+        transform: translateX(-10px);
+    }
+}
+
+@keyframes flashing {
+    0%, 
+    30% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+        width: 200%;
+        height: 200%;
+    }
+}
 /* animation animation */
