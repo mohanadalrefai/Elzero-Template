@@ -335,6 +335,13 @@ ul {
     }
 }
 
+@media (max-width:767px) {
+    .landing .container {
+        flex-direction: column;
+        padding: 30px 0;
+    }
+}
+
 .landing .text {
     flex: 1;
 }
@@ -400,12 +407,8 @@ ul {
 }
 
 .landing .image img {
-    position: absolute;
-    left: 0;
-    top: 0;
-    transform: translatey( 50%);
+    position: relative;
     width: 600px;
-    z-index: -1;
     animation: up-and-down 5s linear infinite;
 }
 
