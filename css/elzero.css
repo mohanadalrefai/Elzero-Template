@@ -407,6 +407,7 @@ ul {
 .landing .image img {
     position: relative;
     width: 600px;
+    max-width: 100%;
     animation: up-and-down 5s linear infinite;
 }
 
@@ -455,6 +456,7 @@ ul {
 .articles {
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
+    position: relative;
 }
 
 .articles .container {
@@ -516,6 +518,7 @@ ul {
 
 /* start gallery */
 .gallery {
+    position: relative;
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
     background-color: var(--section-background);
@@ -567,6 +570,7 @@ ul {
 
 /* start features */
 .features {
+    position: relative;
     padding-top: var(--main-padding-top);
     padding-bottom: var(--main-padding-bottom);
 }
@@ -677,6 +681,8 @@ ul {
 
 .features .time h2::before {
     background-color: #009688;
+    left: 10px;
+    width: calc(100% - 20px);
 }
 
 .features .time a {
@@ -714,6 +720,59 @@ ul {
 }
 
 /* end features */
+
+/* start testimonials */
+.testimonials {
+    position: relative;
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    background-color: var(--section-background);
+}
+
+.testimonials .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+.testimonials .box {
+    position: relative;
+    background-color: white;
+    padding: 15px;
+}
+
+.testimonials .box img {
+    position: absolute;
+    width: 100px;
+    height: 100px;
+    right: -10px;
+    top: -50px;
+    border-radius: 50%;
+    border: 10px solid var(--section-background);
+}
+
+.testimonials .box h3 {
+    color: var(--main-color);
+    margin: 0;
+}
+
+.testimonials .box span {
+    display: block;
+    margin: 10px 0;
+}
+
+.testimonials .box .filled{
+    color: #ffc107;
+}
+
+.testimonials .box p {
+    line-height: 1.5;
+    margin: 10px 0 0;
+    color: #777;
+}
+
+
+/* end testimonials */
 
 /* start animation */
 @keyframes up-and-down {
