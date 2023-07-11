@@ -834,6 +834,7 @@ ul {
     border-radius: 10px;
     transition: var(--main-trasition);
 }
+
 .team .data .social {
     width: 60px;
     display: flex;
@@ -869,6 +870,7 @@ ul {
     margin-top: 10px;
     margin-bottom: 20px;
 }
+
 /* end team */
 
 /* start services */
@@ -964,7 +966,162 @@ ul {
 .services .details a {
     color: var(--main-color);
 }
+
 /* end services */
+
+/* start skills */
+.our-skills {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.our-skills .container {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+.our-skills .skills {
+    flex: 1;
+}
+
+.our-skills .skill h3 {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.our-skills .skill h3 span {
+    font-size: 12px;
+    border: 1px solid #ccc;
+    padding: 3px 5px;
+    border-radius: 4px;
+    color: var(--main-color);
+}
+
+.our-skills .progress {
+    position: relative;
+    height: 25px;
+    background-color: #eee;
+}
+
+.our-skills .progress span {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background-color: var(--main-color);
+}
+
+@media (max-width: 768px) {
+    .our-skills .container img {
+        display: none;
+    }
+}
+/* end skills */
+
+/* start work-steps */
+.work-steps {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.work-steps .container {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+@media (max-width:1023px) {
+    .work-steps .container {
+        flex-direction: column;
+    }
+}
+
+.work-steps .container img {
+    max-width: 100%;
+}
+
+.work-steps .info .box {
+    position: relative;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    border: 2px solid white;
+    background-color: #f6f5f5;
+    border-radius: 4px;
+    margin: 20px auto;
+    padding: 15px;
+    overflow: hidden;
+}
+
+.work-steps .info .box::before {
+    content: "";
+    position: absolute;
+    width: 0px;
+    height: 0px;
+    background-color: #ededed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
+    transition: var(--main-trasition);
+}
+
+.work-steps .info .box:hover::before {
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+@media (max-width:768px) {
+    .work-steps .info .box {
+        flex-direction: column;
+    }
+}
+
+.work-steps .box img {
+    width: 65px;
+    height: 65px;
+    margin-right: 15px;
+    z-index: 1;
+}
+
+@media (max-width:426px){
+    .work-steps .box img {
+        width: 50px;
+        height: 50px;
+    }
+}
+
+.work-steps .box .text {
+    z-index: 1;
+}
+
+.work-steps .box h3 {
+    margin-bottom: 0;
+}
+.work-steps .box p {
+    color: #777;
+    line-height: 1.5;
+}
+
+@media (max-width:768px) {
+    .work-steps .box img {
+        margin-right: 0;
+    }
+    .work-steps .box h3,
+    .work-steps .box p {
+        text-align: center;
+        padding: 0 10px;
+    } 
+}
+/* end work-steps */
+
 /* start animation */
 @keyframes up-and-down {
 
