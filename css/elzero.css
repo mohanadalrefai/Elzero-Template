@@ -1448,12 +1448,13 @@ ul {
 }
 
 .pricing .container .box:hover a {
-    color: white;
-    background-color: var(--main-color-alt);
+    transform: scale(1.1);
+
 }
 
 .pricing .container .box a:hover {
-    transform: scale(1.1);
+    color: white;
+    background-color: var(--main-color-alt);
 }
 
 .pricing .popular {
