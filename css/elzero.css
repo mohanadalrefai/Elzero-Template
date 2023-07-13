@@ -71,6 +71,7 @@ ul {
     border: 2px solid black;
     font-weight: bold;
     font-size: 1.7rem;
+    text-transform: uppercase;
     z-index: 1;
     position: relative;
     transition: var(--main-trasition);
@@ -329,13 +330,13 @@ ul {
     padding-bottom: 120px;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1400px) {
     .landing .container {
         min-height: calc(100vh - 150px);
     }
 }
 
-@media (max-width:767px) {
+@media (max-width:1023px) {
     .landing .container {
         min-height: calc(100vh - 150px);
         flex-direction: column;
@@ -343,9 +344,15 @@ ul {
     }
 }
 
-@media (max-width: 768px) {
+.landing .text {
+    max-width: 50%;
+}
+
+@media (max-width: 1023px) {
     .landing .text {
+        max-width: 100%;
         text-align: center;
+        margin: auto;
     }
 }
 
@@ -355,9 +362,9 @@ ul {
     margin: 0;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1400px) {
     .landing .text h1 {
-        font-size: 5rem;
+        font-size: 3rem;
     }
 }
 
@@ -372,14 +379,13 @@ ul {
     font-size: 1.4em;
     line-height: 1.7;
     color: #666;
-    max-width: 500px;
+    max-width: 100%;
     margin: 5px 0 0;
 }
 
-@media (min-width: 1441px) {
+@media (min-width: 1400px) {
     .landing .text p {
-        font-size: 3rem;
-        max-width: 100%;
+        font-size: 2rem;
         margin-top: 50px;
         line-height: 2;
     }
@@ -398,27 +404,15 @@ ul {
     }
 }
 
-@media (min-width:1441px) {
-    .landing .image {
-        flex: 1;
-    }
-}
 
-.landing .image img {
+.landing img {
     position: relative;
-    width: 600px;
-    max-width: 100%;
+    max-width: 50%;
     animation: up-and-down 5s linear infinite;
 }
 
-@media (min-width: 1441px) {
-    .landing .image img {
-        width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    .landing .image img {
+@media (max-width:1023px) {
+    .landing img {
         max-width: 100%;
     }
 }
@@ -580,6 +574,14 @@ ul {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     gap: 40px;
+}
+
+@media (min-width: 1440px) {
+    .features .container {
+        grid-template-columns: repeat(3, minmax(300px, 400px));
+        justify-content: center;
+        gap: 80px;
+    }
 }
 
 .features .box {
@@ -750,6 +752,10 @@ ul {
     top: -50px;
     border-radius: 50%;
     border: 10px solid var(--section-background);
+}
+
+.testimonials .box img:hover {
+    animation: rotation 0.5s linear;
 }
 
 .testimonials .box h3 {
@@ -1159,7 +1165,7 @@ ul {
 
 
 .events .container .image:hover img {
-    animation: spin 0.5s linear, flashing 0.54s linear;
+    animation: rotation 0.5s linear, flashing 0.25s 0.45s linear;
 }
 
 .events .info {
@@ -1178,6 +1184,12 @@ ul {
     margin: 5px;
     text-align: center;
     width: 70px;
+    transition: var(--main-trasition);
+}
+
+.events .info .unit:hover {
+    border-color: var(--main-color-alt);
+    background-color: calc(var(--main-color) 0.1%);
 }
 
 .events .info .unit span {
@@ -1189,6 +1201,11 @@ ul {
     font-weight: bold;
     color: var(--main-color);
     padding: 15px 5px;
+    transition: var(--main-trasition);
+}
+
+.events .info .unit:hover span:first-child {
+    color: var(--main-color-alt);
 }
 
 .events .info .unit span:last-child {
@@ -1198,7 +1215,13 @@ ul {
     padding: 5px;
     color: white;
     font-size: 14px;
+    transition: var(--main-trasition);
 }
+
+.events .info .unit:hover span:last-child {
+    background-color: var(--main-color-alt);
+}
+
 
 .events .info .title {
     margin: 40px 0 0;
@@ -1281,6 +1304,159 @@ ul {
 }
 
 /* end events */
+
+/* start pricing */
+.pricing {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+    background-color: var(--section-background);
+}
+
+.pricing .container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 40px;
+}
+
+@media (min-width:1440px) {
+    .pricing .container {
+        grid-template-columns: repeat(3, minmax(300px, 400px));
+        justify-content: center;
+        gap: 80px;
+    }
+}
+
+.pricing .box {
+    background-color: white;
+    text-align: center;
+    position: relative;
+    box-shadow: 0 12px 20px 0 rgb(0 0 0 / 13%), 0 2px 4px 0 rgb(0 0 0 / 12%);
+    z-index: 1;
+
+}
+
+.pricing .box::before,
+.pricing .box::after {
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 50%;
+    background-color: #f6f5f5;
+    z-index: -1;
+    transition: var(--main-trasition);
+}
+
+.pricing .box::before {
+    top: 0;
+    left: 0;
+}
+
+.pricing .box::after {
+    right: 0;
+    bottom: 0;
+}
+
+.pricing .box:hover::before,
+.pricing .box:hover::after {
+    width: 100%;
+}
+
+.pricing .box .label {
+    writing-mode: vertical-lr;
+    position: absolute;
+    top: 0;
+    right: 20px;
+    padding: 10px 10px 30px;
+    background-color: var(--main-color);
+    color: white;
+    font-weight: 700;
+}
+
+.pricing .box .label::before {
+    content: "";
+    position: absolute;
+    bottom: -2px;
+    left: 0;
+    border-color: transparent transparent white transparent;
+    border-style: solid;
+    border-width: 20px;
+    transition: var(--main-trasition) 0.1s;
+}
+
+.pricing .box:hover .label::before {
+    border-bottom-color: #f6f5f5;
+}
+
+.pricing .box .price h3 {
+    font-size: 25px;
+    margin: 30px auto;
+    letter-spacing: -1px;
+}
+
+.pricing .box .price img {
+    width: 80px;
+}
+
+.pricing .box .price span.price {
+    display: block;
+    font-size: 60px;
+    font-weight: bold;
+    color: var(--main-color);
+    margin: 25px 0 5px;
+}
+
+.pricing .box .price span.period {
+    display: block;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+.pricing .box ul {
+    text-align: left;
+}
+
+.pricing .box ul li {
+    padding: 20px;
+    border-top: 1px solid #eee;
+}
+
+.pricing .box ul li::before {
+    content: "\f00c";
+    font: var(--fa-font-solid);
+    font-size: 20px;
+    padding-right: 5px;
+    color: var(--main-color);
+}
+
+.pricing .container .box a {
+    display: block;
+    width: fit-content;
+    margin: 40px auto 50px;
+    padding: 15px 20px;
+    border: 2px solid var(--main-color);
+    border-radius: 6px;
+    color: var(--main-color);
+    font-weight: bold;
+    transition: var(--main-trasition);
+}
+
+.pricing .container .box a:hover {
+    color: white;
+    background-color: var(--main-color-alt);
+}
+
+.pricing .popular {
+    transform: translateY(-20px);
+}
+
+@media (max-width:1088px) {
+    .pricing .popular {
+        transform: translateY(0);
+    }
+}
+
+/* end pricing */
 
 /* start animation */
 @keyframes up-and-down {
@@ -1369,7 +1545,7 @@ ul {
     }
 }
 
-@keyframes spin {
+@keyframes rotation {
     50% {
         transform: rotate(-5deg) scale(0.9);
     }
