@@ -1267,9 +1267,11 @@ ul {
 
 @media (max-width:768px) {
     .events .subscribe form {
-        width: 320px;
+        flex-direction: column;
+        max-width: 100%;
         padding: 15px 20px;
         gap: 10px;
+        border-radius: 6px;
     }
 
     .events .subscribe form input {
