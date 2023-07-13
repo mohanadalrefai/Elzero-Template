@@ -368,6 +368,12 @@ ul {
     }
 }
 
+@media (max-width: 1023px) {
+    .landing .text h1 {
+        margin-top: 50px;
+    }
+}
+
 @media (max-width: 426px) {
     .landing .text h1 {
         font-size: 1.75em;
@@ -1441,9 +1447,13 @@ ul {
     transition: var(--main-trasition);
 }
 
-.pricing .container .box a:hover {
+.pricing .container .box:hover a {
     color: white;
     background-color: var(--main-color-alt);
+}
+
+.pricing .container .box a:hover {
+    transform: scale(1.1);
 }
 
 .pricing .popular {
