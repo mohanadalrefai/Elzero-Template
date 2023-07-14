@@ -1377,21 +1377,7 @@ ul {
     background-color: var(--main-color);
     color: white;
     font-weight: 700;
-}
-
-.pricing .box .label::before {
-    content: "";
-    position: absolute;
-    bottom: -2px;
-    left: 0;
-    border-color: transparent transparent white transparent;
-    border-style: solid;
-    border-width: 20px;
-    transition: var(--main-trasition) 0.1s;
-}
-
-.pricing .box:hover .label::before {
-    border-bottom-color: #f6f5f5;
+    clip-path:polygon(0% 0%,100% 0%, 100% 100%, 50% 85%, 0% 100%)
 }
 
 .pricing .box .price h3 {
@@ -1468,6 +1454,75 @@ ul {
 }
 
 /* end pricing */
+
+/* start videos */
+.videos {
+    padding-top: var(--main-padding-top);
+    padding-bottom: var(--main-padding-bottom);
+    position: relative;
+}
+
+.videos .container {
+    display: flex;
+    background-color: #f4f4f4;
+    gap: 10px;
+    padding: 10px;
+}
+
+@media (max-width: 1023px) {
+    .videos .container {
+        flex-direction: column-reverse;
+        border: 10px solid white;
+    }
+}
+
+.videos .container .list .name {
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: bold;
+}
+
+.videos .container .list li {
+    background-color: white;
+    padding: 15px;
+    border-bottom: 1px solid #f4f4f4;
+    cursor: pointer;
+}
+
+.videos .container .list li:hover {
+    color: var(--main-color);
+}
+
+.videos .container .list span {
+    display: block;
+    color: #777;
+    margin-top: 10px;
+}
+
+.videos .container .preview {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 10px;
+    background-color: #e2e2e2;
+}
+
+.videos .container .preview img {
+    max-width: 100%;
+}
+
+.videos .container .preview .info {
+    padding: 20px;
+    background-color: white;
+    margin-top: 10px;
+}
+
+
+
+
+
+/* end videos */
 
 /* start animation */
 @keyframes up-and-down {
