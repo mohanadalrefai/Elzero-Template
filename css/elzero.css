@@ -132,13 +132,6 @@ ul {
     position: relative;
 }
 
-@media (min-width:1441px) {
-    .header .container {
-        height: 200px;
-    }
-}
-
-
 @media (max-width: 426px) {
     .header .container {
         justify-content: center;
@@ -154,13 +147,6 @@ ul {
     font-weight: bold;
     font-size: 26px;
 }
-
-@media (min-width:1441px) {
-    .header .logo {
-        font-size: 5rem;
-    }
-}
-
 
 @media (max-width: 426px) {
     .header .logo {
@@ -205,12 +191,6 @@ ul {
         padding: 0 5px;
         height: 40px;
         font-size: 0.9rem;
-    }
-}
-
-@media (min-width:1441px) {
-    .header .main-nav>li>a {
-        font-size: 3rem;
     }
 }
 
@@ -435,13 +415,6 @@ ul {
 
 .landing .go-down:hover {
     color: var(--main-color-alt);
-}
-
-@media (min-width: 1441px) {
-    .landing .go-down {
-        font-size: 30px;
-        bottom: 120px;
-    }
 }
 
 @media (max-width: 768px) {
